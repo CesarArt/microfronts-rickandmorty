@@ -1,0 +1,19 @@
+services:
+  mf-host:
+    build: 
+        context: ./mf-host
+        dockerfile: docker/Dockerfile
+    ports:
+      - "3001:80"
+  mf-characters:
+    build: 
+        context: ./mf-characters
+        dockerfile: docker/Dockerfile
+    ports:
+      - "3002:80"
+  mf-character-detail:
+    build:
+        context: ./mf-character-detail
+        dockerfile: docker/Dockerfile
+    ports:
+      - "3003:80"
