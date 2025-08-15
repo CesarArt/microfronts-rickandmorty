@@ -12,6 +12,7 @@ export default defineConfig({
       name: 'mf_host',
       remotes: {
         mf_characters: 'http://localhost:3002/assets/remoteEntry.js',
+        mf_character_detail: 'http://localhost:3003/assets/remoteEntry.js',
       },
       shared: ['react', 'react-dom']
     })
