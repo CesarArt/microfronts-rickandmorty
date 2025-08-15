@@ -18,4 +18,12 @@ export default defineConfig({
       shared: ['react', 'react-dom']
     })
   ],
+    server: {
+    port: 3003,
+    cors: {
+      origin: '*',
+      methods: ['GET', 'HEAD', 'PUT', 'PATCH', 'POST', 'DELETE'],
+      allowedHeaders: ['Content-Type', 'Authorization']
+    }
+  }
 })
