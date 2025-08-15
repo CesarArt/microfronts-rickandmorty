@@ -64,11 +64,11 @@ export function LoginPage() {
                                         render={({ field: { onChange } }) =>
                                             <div className="flex form-input w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-black bg-[#f0f2f4] items-center gap-2 h-10">
                                                 <input className="w-full focus:outline-0 focus:ring-0 border-none focus:border-none placeholder:text-[#637588] p-4 text-base font-normal leading-normal" type={showPass ? "text" : "password"} onChange={onChange} maxLength={18} placeholder="Password" />
-                                                <span className="w-10 content-center cursor-pointer hover:opacity-80" onClick={() => setShowPass(!showPass)}>
+                                                <span className="w-10 content-center cursor-pointer hover:opacity-80" data-testid="eye-icon" onClick={() => setShowPass(!showPass)}>
                                                     {
                                                         !showPass ?
-                                                            <Eye size={16} /> :
-                                                            <EyeOff size={16} />
+                                                            <Eye size={16} data-testid="eye-svg" /> :
+                                                            <EyeOff size={16} data-testid="eyeoff-icon" />
                                                     }
                                                 </span>
                                             </div>

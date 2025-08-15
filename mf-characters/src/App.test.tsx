@@ -2,7 +2,7 @@ import { render, screen } from '@testing-library/react';
 import '@testing-library/jest-dom';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders no characters found message', () => {
   render(<App />);
-  expect(screen.getByText(/Click on the Vite and React logos to learn more/i)).toBeInTheDocument();
+  expect(screen.getByText(/No characters found/i)).toBeInTheDocument();
 });
