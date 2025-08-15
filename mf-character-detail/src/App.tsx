@@ -3,7 +3,12 @@ import { useParams } from "react-router-dom";
 import { useCharacter } from "./hooks/useCharacter";
 import { CharacterDetail } from "./CharacterDetail";
 
-function App() {
+
+interface AppProps {
+  action?: () => void
+}
+function App(props: AppProps) {
+
   const { id } = useParams();
   const [characterIdToFound, setCharacterIdToFound] = useState('');
 
@@ -13,7 +18,8 @@ function App() {
 
 
   const goTo = () => {
-    window.location.href = `/characters`;
+    if (props.action)
+      props.action()
   }
   useEffect(() => {
     if (!id) {

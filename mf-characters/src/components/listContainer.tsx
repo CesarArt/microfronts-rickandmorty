@@ -7,7 +7,11 @@ import { CharacterCard } from "./compound/CharacterCard";
 import type { Character } from "../types/character";
 import { SearchFilter } from "./compound/CharacterFilters";
 
-export default function ListCharacters() {
+interface ListCharactersProps {
+    action: (character: Character) => void
+}
+
+export default function ListCharacters(props: ListCharactersProps) {
     const [searchTerm, setSearchTerm] = useState('');
     const [statusFilter, setStatusFilter] = useState('all');
     const [speciesFilter, setSpeciesFilter] = useState('all');
@@ -24,7 +28,7 @@ export default function ListCharacters() {
     } = useCharacters();
 
     const handleCharacterClick = (character: Character) => {
-        window.location.href = `/character/detail/${character.id}`;
+        props.action(character)
     };
 
     // Debounce search term
