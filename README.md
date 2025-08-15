@@ -67,3 +67,7 @@ cd mf-host && npm test
 cd ../mf-characters && npm test
 cd ../mf-character-detail && npm test
 ```
+
+### Note:
+The credentials to access the platform are found in the following file:
+`mf-host/src/utils/dummy-data.ts`
