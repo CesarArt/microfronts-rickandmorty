@@ -1,19 +1,12 @@
-import { useLocation, useNavigate } from "react-router-dom";
 import useStorageToken from "../custom-hooks/use-storage-token";
 import { LogOut } from 'lucide-react';
 
 export default function Navbar() {
     const { removeUserToken } = useStorageToken();
-    const navigate = useNavigate();
-    const location = useLocation();
 
     const signOutAction = () => {
         removeUserToken();
-        if (location.pathname === "/") {
-            window.location.reload();
-        } else {
-            navigate("/")
-        }
+        window.location.reload();
     }
 
     return (
